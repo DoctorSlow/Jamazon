@@ -1,0 +1,26 @@
+{
+  "name": "Jamazon",
+  "version": "1.0.0",
+  "description": "",
+  "main": "jamazonCustomer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DoctorSlow/Jamazon.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DoctorSlow/Jamazon/issues"
+  },
+  "homepage": "https://github.com/DoctorSlow/Jamazon#readme",
+  "dependencies": {
+    "colors": "^1.2.1",
+    "express": "^4.16.3",
+    "inquirer": "^5.2.0",
+    "mysql": "^2.15.0"
+  }
+}
