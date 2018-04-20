@@ -44,7 +44,7 @@ function purchase(res) {
     inquirer.prompt([{
         name: "choice",
         type: "input",
-        message: "Please enter the product name or ID number that you would like to buy"
+        message: "Please enter the product name that you would like to buy"
     }]).then(function (answer) {
         var correct = false;
         for (var i = 0; i < res.length; i++) {
@@ -63,9 +63,9 @@ function purchase(res) {
                             return false;
                         }
                     }
-                }).then(function (answer) {
-                    if ((res[id].stock_quantity - answer.quantity) > 0) {
-                        connection.query("UPDATE products SET stock_quantity =' " + (res[id].stock_quantity - answer.quantity) + " ' WHERE product_name = ' " + product + " ' ", function (err, res2) {
+                }).then(function (update) {
+                    if ((res[id].stock_quantity - update.quantity) > 0) {
+                        connection.query("UPDATE products SET stock_quantity =" + (res[id].stock_quantity - parseInt(update.quantity)) + " WHERE product_name = '" + product + "' ", function (err) {
                             console.log("Success. Thank you for your purchase.");
                             tableDisplay();
                         })
